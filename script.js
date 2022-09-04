@@ -1,81 +1,115 @@
-//functions
+console.log('Hello World'); //statement
 
-let baseSalary = 30_000;
-let overtime = 10;
-let rate = 20;
+// alt control i >> to inspect
 
-function getWage(){
-    return baseSalary + (overtime*rate)
-}
+// Varibles
 
-console.log(getWage())
+let interestRate = 0.3
 
-//OOP
+interestRate = 1;
 
-let employee = {
-    baseSalary:20.000,
-    overtime : 10,
-    rate : 30,
-    getWage: function(){
-        return this.baseSalary + (this.overtime*this.rate)
-    }
-    };
+console.log(interestRate);
 
-console.log(employee.getWage());    
+// type of values to assign to a variable (2)
 
+// Primitives/ value types:
 
-//Object is collection of key, value paird
-//objects Literals is {};: >> 
-//create a variable with let always
-// if object member is a function it is a >> method>>
-// if other member it is a >> property used to hold values>>
+let name= 'Mosh'; // string literal
 
-let circle = {
-    radius: 1, // radius= property
-    location:{ //location= property
-        x:1,
-        y:1
+let age = 30; // number literal
 
-    },
-    draw: function(){ //draw = method
-        console.log('draw'); 
-    }
+let isApproveds = true; //bolean reserved keyword
 
-}; 
+let firstName = undefined; //
+
+let lastName = null; // explicitly clear the value of variable
 
 
-//to access members use . notaion
-circle.draw();
+// Reference types
 
-//to create another circle object if there are method is not good to duplicate
+// Object: 
 
-//use Factories
+let nam1 = 'Mosh'
+let agw2 = 30;
 
-function createCircle(radius){
-    return {
-        radius: radius, //or just radious
-        design: function(){
-            console.log('design')
-        }
+//make it as object
+// {} for object = object literal
+let person = {
 
-
+    nome: 'Mosh',
+    eta: '30'
 };
+// to change the name with dot!
+person.nome = 'Lisa'; 
+// to change name with braket not!
+person['nome'] = 'Mary';
 
+console.log(person);
+
+console.log(person.nome);
+
+// default choice is dot notation
+
+
+
+// Arrays list of objects
+// []; = array literal
+
+let selectedColors = ['red', 'blue'];
+
+// to access elements use index
+console.log(selectedColors);
+console.log(selectedColors[1]);
+
+
+// to add another element to the array
+selectedColors[2] = 'grey';
+selectedColors[3] = 1;
+console.log(selectedColors);
+
+// to access array with property
+
+console.log(selectedColors.length);
+
+
+// Functions
+
+function greet() {
+    // body of the function
+    console.log('Hello Hello');
+} //semicolon not needed 
+
+// call the function
+greet();
+
+// display name of person with parameters
+
+function greetName(nome){
+    console.log('Hello ' + nome);
 }
+greetName('Jhon') // pass a value here as argument variable used only within the function
+greetName('Lisa') // reuse the function with different input
 
-const newCircle = createCircle(1)
-newCircle.design();
-
-//Constructor Fucntion first letter uppercase
-
-function Circle(radius){
-    this.radius = radius;
-    this.design = function(){
-        console.log('design')
-    }
-
+function noreParamenters(nome, lastName){
+    console.log('Hello ' + nome + ' ' + lastName );
 }
-//new creates an empty object
-const another = new Circle(1);
+noreParamenters('Jhon', 'wick') // pass a value here as argument
+noreParamenters('Lisa', 'wick') // reuse the function with different umput
+
+// to calcuate a value
+
+function square (number){
+    return number*number;
+}
+let result = square(2);
+console.log(result)
+// or
+
+console.log(square(5))
 
 
+function sayHello (name){
+    return 'hi ' + name;
+}
+let store = sayHello('lisa')
+console.log(store);
